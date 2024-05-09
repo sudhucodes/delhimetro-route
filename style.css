@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e3edf8;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    padding-top: 0;
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: #2c7873; /* Dark teal */
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #3caea3; /* Lighter teal */
+}
+
+
+
+.toggle-btn:hover {
+    color: #555; /* Adjusted hover color for better matching */
+}
+
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ddd;
+}
+.toggle-btn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    color: white; /* Darker color for better visibility */
+    border: none;
+    background: none;
+    position: absolute;
+    left: 20px;
+}
+header {
+    background-color: #303e9f; /* New background color */
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: -20px;
+    height: 80px; /* Adjusted height for better visibility */
+}
+
+
+/* items */
+/* Add this to your style.css */
+
+.search-container {
+    position: relative;
+    width: 300px;
+    margin-top: 20px;
+    margin: 10px;
+    font-family: Arial, sans-serif; /* Use a clean font */
+}
+
+#searchInput1, #searchInput2 {
+    width: calc(100% - 40px); /* Adjusted width */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.search-results {
+    position: absolute;
+    z-index: 1000;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: calc(94% - 2px);
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: none;
+    border-radius: 4px;
+}
+
+.search-results a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.search-results a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Enhance the appearance of suggestions */
+.search-results a {
+    border-bottom: 1px solid #ddd; /* Add border between suggestions */
+}
+
+.search-results a:last-child {
+    border-bottom: none; /* Remove border from last suggestion */
+}
+
+
+.search-results2 {
+    position: absolute;
+    z-index: 1000;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: calc(94% - 2px);
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: none;
+    border-radius: 4px;
+}
+
+.search-results2 a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.search-results2 a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Enhance the appearance of suggestions */
+.search-results2 a {
+    border-bottom: 1px solid #ddd; /* Add border between suggestions */
+}
+
+.search-results2 a:last-child {
+    border-bottom: none; /* Remove border from last suggestion */
+}
+.item{
+    display: flex;
+    align-items: center;
+}
+
+.item i {
+    rotate: 90deg;
+    margin: 0px;
+    font-size: 30px;
+    padding: 0px;
+    margin-left: 10px; /* Adjusted margin */
+}
+
+.route{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 40px;
+}
+.route i {
+    background-color: #9C27B0; /* Purple */
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a 3D effect using box-shadow */
+}
+
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: block;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+    nav{
+        z-index: 1000;
+    }
+    nav.show {
+        left: 0;
+        z-index: 1000;
+    }
+}
