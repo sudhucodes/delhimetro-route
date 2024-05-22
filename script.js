@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
+        // Shadipur se rithala
 
 document.addEventListener('DOMContentLoaded', () => {
     // Your existing code for search functionality...
@@ -140,16 +140,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedStation1 === 'shadipur' && selectedStation2 === 'rithala') {
             // If both stations are selected, open the image
             openImage('img-1');
-        } else {
-            // If not, you can handle this case accordingly
-            console.log('Please select Shadipur and Rithala to find the route.');
+        } else if (selectedStation1 === 'shadipur' && selectedStation2 === 'jhandewalan') {
+            // If Shadipur and Jhandewalan are selected, open the image
+            openImage('shadipur-jhandewalan');
         }
     });
 });
 
+
+
 function openImage(imageName) {
     // Create a new image element
-    const image = document.createElement('shadipur-rithala');
+    const image = document.createElement('img');
     // Set the source attribute to the image name
     image.src = imageName + '.png'; // Assuming the image file extension is jpg
     
