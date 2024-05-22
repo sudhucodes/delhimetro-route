@@ -1,0 +1,245 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    padding-top: 0;
+}
+
+h3 {
+    padding-left: 20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: #009688;
+    transition: left 0.3s ease;
+    padding: 20px;
+    padding-top: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    border: 1px solid white;
+    color: aqua;
+}
+
+.toggle-btn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.toggle-btn:hover {
+    color: #ccc;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ddd;
+}
+
+header {
+    background-color: #303e9f;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: -20px;
+    height: 80px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Search Items */
+.searchbar {
+    display: grid;
+    gap: 5px;
+}
+
+.search-container {
+    position: relative;
+    width: 300px;
+    margin: 10px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+#searchInput1, #searchInput2 {
+    width: calc(100% - 40px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput1:focus, #searchInput2:focus {
+    border-color: #3f51b5;
+}
+
+.search-results, .search-results2 {
+    position: absolute;
+    z-index: 1000;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: calc(94% - 2px);
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    border-radius: 4px;
+}
+
+.search-results a, .search-results2 a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.search-results a:hover, .search-results2 a:hover {
+    background-color: #f4f4f4;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.item i {
+    transform: rotate(90deg);
+    margin: 0px;
+    font-size: 30px;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+.route {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.route button {
+    color: #fff;
+    outline: none;
+    background-color: #3f51b5;
+    border: 1px solid #3f51b5;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.route button:hover {
+    background-color: #2c387e;
+    border-color: #2c387e;
+}
+
+button {
+    color: black;
+    outline: none;
+    background-color: white;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f4f4f4;
+}
+
+.search-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 15px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: block;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        z-index: 1000;
+    }
+
+    nav.show {
+        left: 0;
+        z-index: 1000;
+    }
+}
