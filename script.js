@@ -122,3 +122,55 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsElement.style.display = 'block';
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Your existing code for search functionality...
+
+    // Selecting the "Find Route" button
+    const findRouteBtn = document.querySelector('.route button');
+
+    // Adding click event listener to the "Find Route" button
+    findRouteBtn.addEventListener('click', () => {
+        // Check if Shadipur and Rithala are selected
+        const selectedStation1 = searchInput1.value.toLowerCase();
+        const selectedStation2 = searchInput2.value.toLowerCase();
+        
+        if (selectedStation1 === 'shadipur' && selectedStation2 === 'rithala') {
+            // If both stations are selected, open the image
+            openImage('img-1');
+        } else {
+            // If not, you can handle this case accordingly
+            console.log('Please select Shadipur and Rithala to find the route.');
+        }
+    });
+});
+
+function openImage(imageName) {
+    // Create a new image element
+    const image = document.createElement('img');
+    // Set the source attribute to the image name
+    image.src = imageName + '.png'; // Assuming the image file extension is jpg
+    
+    // Apply CSS styles for fitting the image width to the screen
+    image.style.width = '100%';
+    image.style.height = 'auto'; // Allowing the height to adjust automatically based on the aspect ratio
+    
+    // Set fixed position to make sure the image doesn't scroll with the page
+    image.style.position = 'relative';
+    image.style.top = '0';
+    image.style.left = '0';
+    image.style.right = '0';
+    image.style.margin = 'auto';
+    image.style.zIndex = '9999';
+
+    // Append the image to the body or any other container element
+    document.body.appendChild(image);
+
+    // Hide the main2 element
+    const main2 = document.querySelector('main2');
+    main2.classList.add('hidden');
+}
+
+
