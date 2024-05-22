@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function openImage(imageName) {
     // Create a new image element
-    const image = document.createElement('img');
+    const image = document.createElement('shadipur-rithala');
     // Set the source attribute to the image name
     image.src = imageName + '.png'; // Assuming the image file extension is jpg
     
