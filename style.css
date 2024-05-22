@@ -1,7 +1,8 @@
+/* Body and Background */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #e3edf8;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f5; /* Light gray */
 }
 
 .container {
@@ -12,6 +13,13 @@ body {
     padding-top: 0;
 }
 
+h3 {
+    padding-left: 20px;
+    margin-bottom: 5px;
+    font-size: 20px; /* Adjusted font size */
+    color: #333; /* Dark text color */
+}
+
 
 nav {
     position: fixed;
@@ -19,43 +27,47 @@ nav {
     left: -50%;
     width: 50%;
     height: 100%;
-    background-color: #2c7873; /* Dark teal */
+    background-color: #009688; /* Dark green */
     transition: left 0.3s ease;
     padding: 20px;
+    padding-top: 40px;
+    padding-left: 0px;
     box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
 
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 20px;
-}
-
-nav ul li {
-    margin-bottom: 10px;
-}
-
+/* Navigation Links */
 nav ul li a {
     display: block;
     text-decoration: none;
     color: #fff;
     font-size: 18px;
+    width: 70%;
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #3caea3; /* Lighter teal */
+    border: 1px solid white;
+    color: aqua; /* Lighter green */
 }
 
 
+.toggle-btn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    position: absolute;
+    left: 20px;
+    top: 20px; /* Adjusted position */
+}
 
 .toggle-btn:hover {
-    color: #555; /* Adjusted hover color for better matching */
+    color: #ccc; /* Lighter on hover */
 }
 
 
@@ -74,18 +86,8 @@ nav ul li a:hover {
 .close-btn:hover {
     color: #ddd;
 }
-.toggle-btn {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 24px;
-    color: white; /* Darker color for better visibility */
-    border: none;
-    background: none;
-    position: absolute;
-    left: 20px;
-}
 header {
-    background-color: #303e9f; /* New background color */
+    background-color: #303e9f; /* Dark blue */
     color: #fff;
     display: flex;
     padding: 10px;
@@ -94,8 +96,13 @@ header {
     text-align: center;
     position: relative;
     margin-bottom: -20px;
-    height: 80px; /* Adjusted height for better visibility */
+    height: 80px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
+.hidden {
+    display: none;
+}
+
 
 
 /* items */
@@ -106,19 +113,28 @@ header {
     width: 300px;
     margin-top: 20px;
     margin: 10px;
-    font-family: Arial, sans-serif; /* Use a clean font */
+    font-family: 'Helvetica Neue', sans-serif; /* Use a clean font */
 }
 
 #searchInput1, #searchInput2 {
-    width: calc(100% - 40px); /* Adjusted width */
+    width: calc(100% - 40px);
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
-.search-results {
+/* Search Input Fields on Focus */
+#searchInput1:focus, #searchInput2:focus {
+    border-color: #3f51b5; /* Dark blue border on focus */
+}
+
+/* Search Results */
+.search-results, .search-results2 {
     position: absolute;
     z-index: 1000;
     top: calc(100% + 5px);
@@ -129,12 +145,12 @@ header {
     width: calc(94% - 2px);
     max-height: 200px;
     overflow-y: auto;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: none;
     border-radius: 4px;
 }
 
-.search-results a {
+.search-results a, .search-results2 a {
     display: block;
     padding: 10px;
     color: #333;
@@ -142,59 +158,14 @@ header {
     transition: background-color 0.3s;
 }
 
-.search-results a:hover {
+.search-results a:hover, .search-results2 a:hover {
     background-color: #f4f4f4;
 }
 
-/* Enhance the appearance of suggestions */
-.search-results a {
-    border-bottom: 1px solid #ddd; /* Add border between suggestions */
-}
-
-.search-results a:last-child {
-    border-bottom: none; /* Remove border from last suggestion */
-}
-
-
-.search-results2 {
-    position: absolute;
-    z-index: 1000;
-    top: calc(100% + 5px);
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-top: none;
-    width: calc(94% - 2px);
-    max-height: 200px;
-    overflow-y: auto;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: none;
-    border-radius: 4px;
-}
-
-.search-results2 a {
-    display: block;
-    padding: 10px;
-    color: #333;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.search-results2 a:hover {
-    background-color: #f4f4f4;
-}
-
-/* Enhance the appearance of suggestions */
-.search-results2 a {
-    border-bottom: 1px solid #ddd; /* Add border between suggestions */
-}
-
-.search-results2 a:last-child {
-    border-bottom: none; /* Remove border from last suggestion */
-}
-.item{
+.item {
     display: flex;
     align-items: center;
+    padding-left: 10px;
 }
 
 .item i {
@@ -204,21 +175,52 @@ header {
     padding: 0px;
     margin-left: 10px; /* Adjusted margin */
 }
-
-.route{
+.searchbar{
+    display: grid;
+    gap: 5px;
+}
+.route {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
     font-size: 40px;
 }
-.route i {
-    background-color: #9C27B0; /* Purple */
+
+.route button {
     color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a 3D effect using box-shadow */
+    outline: none;
+    background-color: #3f51b5; /* Dark blue */
+    border: 1px solid #3f51b5; /* Dark blue border */
+    padding: 15px 30px; /* Larger padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transitions */
 }
+
+.route button:hover {
+    background-color: #2c387e; /* Darker blue on hover */
+    border-color: #2c387e; /* Darker blue border on hover */
+}
+
+button {
+    color: black;
+    outline: none;
+    background-color: white; /* Adding a background color for better visibility */
+    border: 1px solid #333; /* Adding a border */
+    padding: 10px 20px; /* Adding padding */
+    border-radius: 5px; /* Adding rounded corners */
+    cursor: pointer; /* Changing cursor to pointer on hover */
+}
+
+.search-container label {
+    display: block; /* Make the label a block element */
+    margin-bottom: 5px; /* Add some space below the label */
+    color: #333; /* Set the color of the label */
+    font-size: 15px; /* Adjust the font size */
+}
+
+
 
 @media (max-width: 768px) {
     .toggle-btn {
