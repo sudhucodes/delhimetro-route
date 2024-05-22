@@ -9,7 +9,8 @@
 </head>
 <body>
 
-<header>
+<main1>
+    <header>
     <button class="toggle-btn">&#9776;</button>
     <h2>Route</h2>
 </header>
@@ -32,26 +33,33 @@
         </ul>
     </nav>
 </div>
+<main2>
 
-<div class="item">
-<div class="searchbar">
-        <!-- ITEMS -->
-<div class="search-container">
-    <input type="text" id="searchInput1" placeholder="Start station...">
-    <div class="search-results"></div>
-</div>
-
-<div class="search-container">
-    <input type="text" id="searchInput2" placeholder="To station...">
-    <div class="search-results2"></div>
-</div>
-</div>
-<i class="fa-solid fa-arrow-right-arrow-left"></i>
-</div>
-
-<div class="route">
-    <i class="fa-solid fa-route"></i>
-</div>
+    <h3>Find your route</h3>
+    <div class="item">
+    <div class="searchbar">
+            <!-- ITEMS -->
+    <div class="search-container">
+        <label for="">Start station:</label>
+        <input type="text" id="searchInput1" placeholder="Enter start station">
+        <div class="search-results"></div>
+    </div>
+    
+    <div class="search-container">
+        <label for="">Last station:</label>
+        <input type="text" id="searchInput2" placeholder="Enter last station">
+        <div class="search-results2"></div>
+    </div>
+    </div>
+    <i id="findRouteBtn" class="fa-solid fa-arrow-right-arrow-left"></i>
+    </div>
+    
+              <!-- Route btn -->
+    <div class="route">
+        <button>Find Route</button>
+    </div>
+</main2>
+</main1>
 
 <script src="script.js"></script>
 
